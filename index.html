@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CDT Odontologia - Clínica odontológica especializada em tratamentos dentários de excelência. Lentes de contato dental, implantes, ortodontia e muito mais.">
+    <meta name="keywords" content="odontologia, dentista, lentes de contato dental, clínica odontológica, implantes dentários">
+    <meta name="author" content="Weblytics">
+    <title>CDT Odontologia | Sorrisos que Transformam Vidas</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ========== LOADING SCREEN ========== -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="tooth-icon">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <h2>CDT Odontologia</h2>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p class="loading-text">Preparando sua experiência...</p>
+        </div>
+    </div>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-tooth"></i>
+                <span>CDT Odontologia</span>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Início</a></li>
+                <li><a href="#about" class="nav-link">Sobre</a></li>
+                <li><a href="#doctors" class="nav-link">Doutores</a></li>
+                <li><a href="#gallery" class="nav-link">Galeria</a></li>
+                <li><a href="#services" class="nav-link">Serviços</a></li>
+                <li><a href="#testimonials" class="nav-link">Depoimentos</a></li>
+                <li><a href="#contact" class="nav-link">Contato</a></li>
+            </ul>
+
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="particles"></div>
+
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="hero-title">
+                    <span class="title-line">Sorrisos que</span>
+                    <span class="title-line highlight">Transformam Vidas</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Excelência em odontologia com tecnologia de ponta e cuidado humanizado.
+                    Sua saúde bucal merece o melhor.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Agende sua Consulta</span>
+                        <i class="fas fa-calendar-check"></i>
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        <span>Nossos Serviços</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Anos de Experiência</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">Pacientes Atendidos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">% Satisfação</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Role para explorar</p>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Conheça a CDT</span>
+                <h2 class="section-title">Cuidado Odontológico de Excelência</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="about-image-wrapper">
+                        <img src="images/clinic.jpg" alt="Clínica CDT Odontologia" onerror="this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800'">
+                        <div class="about-badge">
+                            <i class="fas fa-award"></i>
+                            <span>Certificada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-text" data-aos="fade-left">
+                    <h3>Transformando sorrisos há mais de 15 anos</h3>
+                    <p>
+                        Na <strong>CDT Odontologia</strong>, acreditamos que cada sorriso conta uma história única.
+                        Nossa missão é proporcionar tratamentos odontológicos de excelência, aliando tecnologia
+                        de ponta ao cuidado humanizado que você merece.
+                    </p>
+                    <p>
+                        Com uma equipe altamente qualificada e equipamentos modernos, oferecemos desde procedimentos
+                        estéticos até tratamentos complexos, sempre priorizando seu conforto e bem-estar.
+                    </p>
+
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Profissionais Especializados</h4>
+                                <p>Doutores com formação internacional e anos de experiência</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Tecnologia de Ponta</h4>
+                                <p>Equipamentos modernos para diagnósticos precisos</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Atendimento Humanizado</h4>
+                                <p>Cuidado personalizado e atenção aos detalhes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DOCTORS SECTION ========== -->
+    <section class="doctors" id="doctors">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Nossa Equipe</span>
+                <h2 class="section-title">Conheça Nossos Especialistas</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">
+                    Profissionais altamente qualificados e dedicados ao seu sorriso
+                </p>
+            </div>
+
+            <div class="doctors-grid">
+                <div class="doctor-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="doctor-image-wrapper">
+                        <img src="images/doctor1.jpg" alt="Dr. João Silva" class="doctor-image" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500'">
+                        <div class="doctor-overlay">
+                            <div class="doctor-social">
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. João Silva</h3>
+                        <p class="doctor-specialty">Especialista em Implantodontia</p>
+                        <p class="doctor-description">
+                            CRO 12345-SP | Mestre em Implantodontia pela USP.
+                            Mais de 2000 implantes realizados com excelência.
+                        </p>
+                        <div class="doctor-credentials">
+                            <span><i class="fas fa-graduation-cap"></i> Mestre USP</span>
+                            <span><i class="fas fa-certificate"></i> ABROSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="doctor-image-wrapper">
+                        <img src="images/doctor2.jpg" alt="Dra. Maria Santos" class="doctor-image" onerror="this.src='https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=500'">
+                        <div class="doctor-overlay">
+                            <div class="doctor-social">
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dra. Maria Santos</h3>
+                        <p class="doctor-specialty">Especialista em Dentística e Estética</p>
+                        <p class="doctor-description">
+                            CRO 23456-SP | Doutora em Dentística Restauradora.
+                            Referência em lentes de contato dental e harmonização do sorriso.
+                        </p>
+                        <div class="doctor-credentials">
+                            <span><i class="fas fa-graduation-cap"></i> Doutora</span>
+                            <span><i class="fas fa-certificate"></i> SBOE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="doctor-image-wrapper">
+                        <img src="images/doctor3.jpg" alt="Dr. Carlos Oliveira" class="doctor-image" onerror="this.src='https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500'">
+                        <div class="doctor-overlay">
+                            <div class="doctor-social">
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. Carlos Oliveira</h3>
+                        <p class="doctor-specialty">Especialista em Ortodontia</p>
+                        <p class="doctor-description">
+                            CRO 34567-SP | Especialista em Ortodontia e Ortopedia Facial.
+                            Expert em alinhadores invisíveis e ortodontia digital.
+                        </p>
+                        <div class="doctor-credentials">
+                            <span><i class="fas fa-graduation-cap"></i> UNICAMP</span>
+                            <span><i class="fas fa-certificate"></i> ABO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== GALLERY SECTION (ANTES E DEPOIS) ========== -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Resultados Reais</span>
+                <h2 class="section-title">Galeria de Transformações</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">
+                    Veja alguns dos sorrisos que transformamos
+                </p>
+            </div>
+
+            <div class="gallery-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="lentes">Lentes de Contato</button>
+                <button class="filter-btn" data-filter="implantes">Implantes</button>
+                <button class="filter-btn" data-filter="clareamento">Clareamento</button>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="lentes" data-aos="zoom-in">
+                    <div class="before-after">
+                        <div class="before-after-images">
+                            <img src="images/before1.jpg" alt="Antes" class="image-before" onerror="this.src='https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600'">
+                            <img src="images/after1.jpg" alt="Depois" class="image-after" onerror="this.src='https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?w=600'">
+                            <div class="slider-handle"></div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Lentes de Contato Dental</h4>
+                            <p>Transformação completa do sorriso</p>
+                            <button class="view-more-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="lentes" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="before-after">
+                        <div class="before-after-images">
+                            <img src="images/before2.jpg" alt="Antes" class="image-before" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600'">
+                            <img src="images/after2.jpg" alt="Depois" class="image-after" onerror="this.src='https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600'">
+                            <div class="slider-handle"></div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Lentes de Porcelana</h4>
+                            <p>Correção e harmonização</p>
+                            <button class="view-more-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="implantes" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="before-after">
+                        <div class="before-after-images">
+                            <img src="images/before3.jpg" alt="Antes" class="image-before" onerror="this.src='https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600'">
+                            <img src="images/after3.jpg" alt="Depois" class="image-after" onerror="this.src='https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?w=600'">
+                            <div class="slider-handle"></div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Implante Total</h4>
+                            <p>Recuperação completa</p>
+                            <button class="view-more-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="clareamento" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="before-after">
+                        <div class="before-after-images">
+                            <img src="images/before4.jpg" alt="Antes" class="image-before" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600'">
+                            <img src="images/after4.jpg" alt="Depois" class="image-after" onerror="this.src='https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600'">
+                            <div class="slider-handle"></div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Clareamento Dental</h4>
+                            <p>Resultado natural</p>
+                            <button class="view-more-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION ========== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Nossos Serviços</span>
+                <h2 class="section-title">Tratamentos Especializados</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Lentes de Contato Dental</h3>
+                    <p>
+                        Transforme seu sorriso com lentes ultrafinas de porcelana.
+                        Procedimento minimamente invasivo para resultados incríveis.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Sem desgaste dos dentes</li>
+                        <li><i class="fas fa-check"></i> Resultado natural</li>
+                        <li><i class="fas fa-check"></i> Durabilidade superior</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <h3>Implantes Dentários</h3>
+                    <p>
+                        Recupere a função e estética dos seus dentes com implantes
+                        de última geração. Planejamento digital 3D.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Cirurgia guiada</li>
+                        <li><i class="fas fa-check"></i> Carga imediata</li>
+                        <li><i class="fas fa-check"></i> Alta taxa de sucesso</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-smile-beam"></i>
+                    </div>
+                    <h3>Clareamento Dental</h3>
+                    <p>
+                        Clareamento a laser de última geração. Dentes mais brancos
+                        em uma única sessão, com segurança e conforto.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Tecnologia LED</li>
+                        <li><i class="fas fa-check"></i> Sem sensibilidade</li>
+                        <li><i class="fas fa-check"></i> Resultado imediato</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-teeth"></i>
+                    </div>
+                    <h3>Ortodontia</h3>
+                    <p>
+                        Aparelhos tradicionais e alinhadores invisíveis.
+                        Planejamento digital para resultados previsíveis.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Alinhadores invisíveis</li>
+                        <li><i class="fas fa-check"></i> Ortodontia digital</li>
+                        <li><i class="fas fa-check"></i> Acompanhamento online</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase-medical"></i>
+                    </div>
+                    <h3>Harmonização Facial</h3>
+                    <p>
+                        Procedimentos estéticos faciais para complementar seu
+                        novo sorriso. Botox, preenchimento e mais.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Profissionais certificados</li>
+                        <li><i class="fas fa-check"></i> Produtos premium</li>
+                        <li><i class="fas fa-check"></i> Resultados naturais</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Odontologia Geral</h3>
+                    <p>
+                        Prevenção e tratamento completo. Limpeza, restaurações,
+                        canal e todos os cuidados que você precisa.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Check-up completo</li>
+                        <li><i class="fas fa-check"></i> Emergências</li>
+                        <li><i class="fas fa-check"></i> Acompanhamento contínuo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS SECTION ========== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Depoimentos</span>
+                <h2 class="section-title">O Que Nossos Pacientes Dizem</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="testimonials-slider" data-aos="fade-up">
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Fiz lentes de contato dental com a Dra. Maria e o resultado
+                            superou todas as minhas expectativas! Equipe atenciosa e
+                            profissional. Recomendo muito!"
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="images/client1.jpg" alt="Ana Paula" onerror="this.src='https://i.pravatar.cc/150?img=1'">
+                            <div class="author-info">
+                                <h4>Ana Paula Silva</h4>
+                                <p>Lentes de Contato Dental</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Depois de anos com medo de dentista, finalmente encontrei
+                            uma clínica que me deixa tranquilo. O Dr. João é excelente!
+                            Fiz meu implante e ficou perfeito."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="images/client2.jpg" alt="Roberto Costa" onerror="this.src='https://i.pravatar.cc/150?img=12'">
+                            <div class="author-info">
+                                <h4>Roberto Costa</h4>
+                                <p>Implante Dentário</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Clínica impecável, equipamentos modernos e profissionais
+                            qualificados. Fiz tratamento ortodôntico com o Dr. Carlos
+                            e amei o resultado!"
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="images/client3.jpg" alt="Juliana Mendes" onerror="this.src='https://i.pravatar.cc/150?img=5'">
+                            <div class="author-info">
+                                <h4>Juliana Mendes</h4>
+                                <p>Ortodontia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Atendimento excepcional! Todos os detalhes são pensados
+                            para nosso conforto. Fiz clareamento e lentes, e meu
+                            sorriso está incrível!"
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="images/client4.jpg" alt="Marcos Oliveira" onerror="this.src='https://i.pravatar.cc/150?img=8'">
+                            <div class="author-info">
+                                <h4>Marcos Oliveira</h4>
+                                <p>Estética Dental</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="slider-dots" id="sliderDots"></div>
+                    <button class="slider-btn next-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Entre em Contato</span>
+                <h2 class="section-title">Agende sua Consulta</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">
+                    Estamos prontos para cuidar do seu sorriso
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Endereço</h4>
+                            <p>Av. Paulista, 1000 - 5º andar<br>São Paulo - SP, 01310-100</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Telefone</h4>
+                            <p>(11) 3456-7890<br>(11) 98765-4321</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>E-mail</h4>
+                            <p>contato@cdtodontologia.com.br<br>agendamento@cdtodontologia.com.br</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 8h às 19h<br>Sábado: 8h às 13h</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Nome Completo</label>
+                            <i class="fas fa-user"></i>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">E-mail</label>
+                                <i class="fas fa-envelope"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" required>
+                                <label for="phone">Telefone</label>
+                                <i class="fas fa-phone"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected></option>
+                                <option value="lentes">Lentes de Contato Dental</option>
+                                <option value="implantes">Implantes Dentários</option>
+                                <option value="clareamento">Clareamento</option>
+                                <option value="ortodontia">Ortodontia</option>
+                                <option value="harmonizacao">Harmonização Facial</option>
+                                <option value="geral">Odontologia Geral</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                            <label for="service">Serviço de Interesse</label>
+                            <i class="fas fa-list"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Mensagem</label>
+                            <i class="fas fa-comment"></i>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span>Enviar Mensagem</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+
+                    <div class="form-success" id="formSuccess">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Mensagem Enviada!</h3>
+                        <p>Entraremos em contato em breve.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <i class="fas fa-tooth"></i>
+                            <span>CDT Odontologia</span>
+                        </div>
+                        <p class="footer-description">
+                            Transformando sorrisos e vidas há mais de 15 anos.
+                            Excelência, tecnologia e cuidado humanizado.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Serviços</h4>
+                        <ul>
+                            <li><a href="#services">Lentes de Contato Dental</a></li>
+                            <li><a href="#services">Implantes Dentários</a></li>
+                            <li><a href="#services">Clareamento Dental</a></li>
+                            <li><a href="#services">Ortodontia</a></li>
+                            <li><a href="#services">Harmonização Facial</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Links Rápidos</h4>
+                        <ul>
+                            <li><a href="#about">Sobre Nós</a></li>
+                            <li><a href="#doctors">Nossa Equipe</a></li>
+                            <li><a href="#gallery">Galeria</a></li>
+                            <li><a href="#testimonials">Depoimentos</a></li>
+                            <li><a href="#contact">Contato</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Contato</h4>
+                        <ul class="contact-list">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Av. Paulista, 1000 - 5º andar<br>São Paulo - SP</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <span>(11) 3456-7890</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>contato@cdtodontologia.com.br</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 CDT Odontologia. Todos os direitos reservados.</p>
+                <p class="weblytics-credit">
+                    Desenvolvido com <i class="fas fa-heart"></i> por
+                    <a href="#" target="_blank">Weblytics</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== BACK TO TOP BUTTON ========== -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ========== WHATSAPP FLOATING BUTTON ========== -->
+    <a href="https://wa.me/5511987654321" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
