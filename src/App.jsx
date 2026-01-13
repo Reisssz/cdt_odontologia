@@ -229,6 +229,13 @@ const InnerlyOdonto = () => {
     { title: 'Previsível', desc: 'Visualize o resultado antes de começar', icon: <TrendingUp /> }
   ];
 
+  useEffect(() => {
+    if (showBooking) {
+      resetBooking();
+    }
+  }, [showBooking]);
+
+
   const handleSendMessage = async () => {
     if (!userInput.trim()) return;
 
@@ -267,17 +274,30 @@ const InnerlyOdonto = () => {
       setIsTyping(false);
     }, 1500);
   };
+  const resetBooking = () => {
+    setSelectedService('');
+    setSelectedDate('');
+    setSelectedTime('');
+  };
+
 
   const handleBooking = () => {
-    if (selectedDate && selectedTime && selectedService) {
-      const formattedDate = new Date(selectedDate).toLocaleDateString('pt-BR');
-      alert(`✨ Agendamento confirmado!\n\nServiço: ${selectedService}\nData: ${formattedDate}\nHorário: ${selectedTime}\n\nEntraremos em contato em breve para confirmar.`);
-      setShowBooking(false);
-      setSelectedDate('');
-      setSelectedTime('');
-      setSelectedService('');
-    }
+    if (!selectedService || !selectedDate || !selectedTime) return;
+
+    const formattedDate = new Date(selectedDate).toLocaleDateString('pt-BR');
+
+    alert(
+      `✨ Agendamento confirmado!\n\n` +
+      `Serviço: ${selectedService}\n` +
+      `Data: ${formattedDate}\n` +
+      `Horário: ${selectedTime}\n\n` +
+      `Entraremos em contato em breve.`
+    );
+
+    setShowBooking(false);
+    resetBooking();
   };
+
 
   const scrollToSection = (section) => {
     setActiveSection(section);
@@ -287,6 +307,17 @@ const InnerlyOdonto = () => {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
+  useEffect(() => {
+    const element = document.getElementById(activeSection);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }, [activeSection]);
+
 
   const renderContent = () => {
     switch(activeSection) {
@@ -312,7 +343,10 @@ const InnerlyOdonto = () => {
   const HomeSection = () => (
     <>
       {/* Hero Section */}
-      <section id="home" className="pt-32 pb-20 px-6 relative overflow-hidden">
+      <section
+          id="home"
+          className="min-h-screen flex items-center pt-32 px-6 relative overflow-hidden"
+        >
         <div className="absolute inset-0 bg-gradient-to-br from-[#D1C3A6]/20 via-white to-[#42554F]/5"></div>
         <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-[#D4AE7D]/30 to-[#A38561]/30 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-gradient-to-br from-[#42554F]/10 to-[#364540]/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
