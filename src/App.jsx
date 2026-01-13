@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Calendar, Clock, MessageCircle, Sparkles, CheckCircle, X, Send, Star, Award, Phone, Mail, MapPin, Instagram, Facebook, ChevronRight, Menu, Shield, Heart, Zap, MessageSquare, TrendingUp, Users, Camera, Smile, BadgeCheck, Gift, CreditCard, FileText, HelpCircle } from 'lucide-react';
 
 const InnerlyOdonto = () => {
@@ -18,6 +18,38 @@ const InnerlyOdonto = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeFaq, setActiveFaq] = useState(null);
   const fullText = 'Seu sorriso merece o melhor cuidado';
+
+  const dateRef = useRef(null);
+  const timeRef = useRef(null);
+  const confirmRef = useRef(null);
+
+  useEffect(() => {
+    if (selectedService && dateRef.current) {
+      dateRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }, [selectedService]);
+
+  useEffect(() => {
+    if (selectedDate && timeRef.current) {
+      timeRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }, [selectedDate]);
+
+  useEffect(() => {
+    if (selectedTime && confirmRef.current) {
+      confirmRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+    }
+  }, [selectedTime]);
+
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -1050,95 +1082,112 @@ const InnerlyOdonto = () => {
 
       {/* Booking Modal */}
       {showBooking && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-y-auto">
-          <div className="bg-white rounded-3xl shadow-2xl max-w-3xl w-full my-8">
-            <div className="bg-gradient-to-r from-[#D4AE7D] via-[#A38561] to-[#D4AE7D] p-6 rounded-t-3xl flex justify-between items-center">
-              <h3 className="text-2xl font-bold text-white flex items-center">
-                <Calendar className="w-6 h-6 mr-3" />
-                Agendar Consulta
-              </h3>
-              <button onClick={() => setShowBooking(false)} className="text-white hover:bg-white/20 p-2 rounded-full transition-all">
-                <X className="w-6 h-6" />
-              </button>
+      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-y-auto">
+        <div className="bg-white rounded-3xl shadow-2xl max-w-3xl w-full my-8">
+          <div className="bg-gradient-to-r from-[#D4AE7D] via-[#A38561] to-[#D4AE7D] p-6 rounded-t-3xl flex justify-between items-center">
+            <h3 className="text-2xl font-bold text-white flex items-center">
+              <Calendar className="w-6 h-6 mr-3" />
+              Agendar Consulta
+            </h3>
+            <button
+              onClick={() => setShowBooking(false)}
+              className="text-white hover:bg-white/20 p-2 rounded-full transition-all"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
+          <div className="p-8 max-h-[70vh] overflow-y-auto space-y-10">
+
+            {/* SERVIÇOS */}
+            <div>
+              <label className="block text-gray-700 font-semibold mb-4 text-lg">
+                Selecione o tratamento:
+              </label>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {services.map(service => (
+                  <button
+                    key={service.name}
+                    onClick={() => setSelectedService(service.name)}
+                    className={`p-4 rounded-xl font-medium text-left transition-all duration-300 ${
+                      selectedService === service.name
+                        ? 'bg-gradient-to-br from-[#D4AE7D] via-[#A38561] to-[#D4AE7D] text-white shadow-lg scale-105'
+                        : 'bg-gray-100 text-gray-700 hover:bg-[#D1C3A6]/30 border-2 border-transparent'
+                    }`}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className={selectedService === service.name ? 'text-white' : 'text-[#42554F]'}>
+                        {service.icon}
+                      </div>
+                      <span className="font-semibold">{service.name}</span>
+                    </div>
+                  </button>
+                ))}
+              </div>
             </div>
-            
-            <div className="p-8 max-h-[70vh] overflow-y-auto">
-              <div className="mb-8">
-                <label className="block text-gray-700 font-semibold mb-4 text-lg">Selecione o tratamento:</label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {services.map(service => (
+
+            {/* DATAS */}
+            {selectedService && (
+              <div ref={dateRef} className="animate-fadeIn">
+                <label className="block text-gray-700 font-semibold mb-4 text-lg">
+                  Escolha uma data disponível:
+                </label>
+
+                <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                  {availableDates.map(date => {
+                    const formatted = new Date(date + 'T12:00:00').toLocaleDateString('pt-BR', {
+                      day: '2-digit',
+                      month: 'short',
+                    });
+
+                    return (
+                      <button
+                        key={date}
+                        onClick={() => setSelectedDate(date)}
+                        className={`p-4 rounded-xl font-medium transition-all duration-300 ${
+                          selectedDate === date
+                            ? 'bg-gradient-to-br from-[#D4AE7D] via-[#A38561] to-[#D4AE7D] text-white shadow-lg scale-105'
+                            : 'bg-gray-100 text-gray-700 hover:bg-[#D1C3A6]/30 border-2 border-transparent'
+                        }`}
+                      >
+                        {formatted}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* HORÁRIOS */}
+            {selectedDate && (
+              <div ref={timeRef} className="animate-fadeIn">
+                <label className="block text-gray-700 font-semibold mb-4 text-lg flex items-center">
+                  <Clock className="w-5 h-5 mr-2 text-[#42554F]" />
+                  Horários disponíveis:
+                </label>
+
+                <div className="grid grid-cols-3 sm:grid-cols-5 gap-3">
+                  {availableTimes.map(time => (
                     <button
-                      key={service.name}
-                      onClick={() => setSelectedService(service.name)}
-                      className={`p-4 rounded-xl font-medium text-left transition-all duration-300 ${
-                        selectedService === service.name
+                      key={time}
+                      onClick={() => setSelectedTime(time)}
+                      className={`p-3 rounded-lg font-medium transition-all duration-300 ${
+                        selectedTime === time
                           ? 'bg-gradient-to-br from-[#D4AE7D] via-[#A38561] to-[#D4AE7D] text-white shadow-lg scale-105'
-                          : 'bg-gray-100 text-gray-700 hover:bg-[#D1C3A6]/30 hover:border-[#D4AE7D] border-2 border-transparent'
+                          : 'bg-gray-100 text-gray-700 hover:bg-[#D1C3A6]/30 border-2 border-transparent'
                       }`}
                     >
-                      <div className="flex items-center space-x-3">
-                        <div className={`${selectedService === service.name ? 'text-white' : 'text-[#42554F]'}`}>
-                          {service.icon}
-                        </div>
-                        <span className="font-semibold">{service.name}</span>
-                      </div>
+                      {time}
                     </button>
                   ))}
                 </div>
               </div>
+            )}
 
-              {selectedService && (
-                <>
-                  <div className="mb-8 animate-fadeIn">
-                    <label className="block text-gray-700 font-semibold mb-4 text-lg">Escolha uma data disponível:</label>
-                    <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
-                      {availableDates.map(date => {
-                        const dateObj = new Date(date + 'T12:00:00');
-                        const formatted = dateObj.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
-                        return (
-                          <button
-                            key={date}
-                            onClick={() => setSelectedDate(date)}
-                            className={`p-4 rounded-xl font-medium transition-all duration-300 ${
-                              selectedDate === date
-                                ? 'bg-gradient-to-br from-[#D4AE7D] via-[#A38561] to-[#D4AE7D] text-white shadow-lg scale-105'
-                                : 'bg-gray-100 text-gray-700 hover:bg-[#D1C3A6]/30 hover:border-[#D4AE7D] border-2 border-transparent'
-                            }`}
-                          >
-                            {formatted}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </>
-              )}
-              
-              {selectedDate && (
-                <div className="mb-8 animate-fadeIn">
-                  <label className="block text-gray-700 font-semibold mb-4 text-lg flex items-center">
-                    <Clock className="w-5 h-5 mr-2 text-[#42554F]" />
-                    Horários disponíveis:
-                  </label>
-                  <div className="grid grid-cols-3 sm:grid-cols-5 gap-3">
-                    {availableTimes.map(time => (
-                      <button
-                        key={time}
-                        onClick={() => setSelectedTime(time)}
-                        className={`p-3 rounded-lg font-medium transition-all duration-300 ${
-                          selectedTime === time
-                            ? 'bg-gradient-to-br from-[#D4AE7D] via-[#A38561] to-[#D4AE7D] text-white shadow-lg scale-105'
-                            : 'bg-gray-100 text-gray-700 hover:bg-[#D1C3A6]/30 hover:border-[#D4AE7D] border-2 border-transparent'
-                        }`}
-                      >
-                        {time}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-              
-              {selectedDate && selectedTime && selectedService && (
+            {/* CONFIRMAR */}
+            {selectedService && selectedDate && selectedTime && (
+              <div ref={confirmRef} className="animate-fadeIn">
                 <button
                   onClick={handleBooking}
                   className="w-full bg-gradient-to-r from-[#D4AE7D] via-[#A38561] to-[#D4AE7D] text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
@@ -1146,11 +1195,14 @@ const InnerlyOdonto = () => {
                   <CheckCircle className="w-6 h-6" />
                   <span>Confirmar Agendamento</span>
                 </button>
-              )}
-            </div>
+              </div>
+            )}
+
           </div>
         </div>
-      )}
+      </div>
+    )}
+
 
       {/* Chat Widget */}
       {chatOpen && (
